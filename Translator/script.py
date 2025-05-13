@@ -6,10 +6,10 @@ class TranslateClass(object):
     def __init__(self, word, lang):
         self.word = word
         self.lang = lang
-        self.Trans = Translator(service_urls=["translate.google.com"])
+        self.trans = Translator(service_urls=["translate.google.com"])
 
     def __repr__(self):
-        translated = self.Trans.translate(self.word, dest=self.lang).text
+        translated = self.trans.translate(self.word, dest=self.lang).text
         data = [
             ['Language:', "Word/Sentence"],
             ['English', self.word],
