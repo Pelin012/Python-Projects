@@ -6,9 +6,10 @@ class TranslateClass(object):
     def __init__(self, word, lang):
         self.word = word
         self.lang = lang
-        self.Trans = Translator(service_urls=["translate.google.com"])
+        self.Translator = Translator(service_urls=["translate.google.com"])
 
     def __repr__(self):
+        try:
         translated = self.Trans.translate(self.word, dest=self.lang).text
         data = [
             ['Language:', "Word/Sentence"],
@@ -19,7 +20,7 @@ class TranslateClass(object):
 
 
 if __name__ == '__main__':
-    translate = input('Enter Word/Sentence...')
+    translate = input('Enter Word/Sentence:')
     language = 'kn'  # Translates to Kannada
     # language = 'hi' # Translates to Hindi
     # language = 'it' # Translates to Italian
